@@ -5,7 +5,7 @@
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
     "indentation": 2,
-    "max-line-length": 100,
+    "max-line-length": 80,
     "string-quotes": "double",
     "selector-list-comma-newline-after": "always",
     "block-opening-brace-space-before": "always",

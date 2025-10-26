@@ -27,4 +27,7 @@
   background-color: $light-gray;
   border-radius: 50px;
   align-self: flex-end;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
 }

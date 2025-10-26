@@ -1,18 +1,13 @@
 @use "sass:color";
 
 //  Fonts variables
-
 $display-serif-l: "mendl-serif-dawn", sans-serif;
 $display-serif-m: "mendl-serif-dusk", sans-serif;
 $display-comment: "Protest Riot", sans-serif;
 $body-font: "Inter", sans-serif;
 
-// Para quitar
-$font-family-sans-serif:
-  -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue",
-  arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
-$mqMinWidth: 420px;
+// Color variables
+$light-gray: rgb(236, 240, 241);
+$dark-gray: rgb(31, 41, 51);
+$primary-blue: rgb(68, 82, 207);
+$primary-yellow: rgb(247, 178, 59);

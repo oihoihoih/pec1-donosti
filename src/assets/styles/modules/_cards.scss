@@ -1,0 +1,13 @@
+.main-card {
+  width: 50%;
+  height: 100vh;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  padding: 20vh 5rem;
+
+  &__title,
+  &__text {
+    flex: 1;
+  }
+}

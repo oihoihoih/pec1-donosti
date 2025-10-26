@@ -1,19 +1,9 @@
 {
-  "extends": ["stylelint-config-recommended-scss"],
   "plugins": ["stylelint-scss"],
+  "extends": ["stylelint-config-recommended-scss"],
   "rules": {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
-    "indentation": 2,
-    "max-line-length": 80,
-    "string-quotes": "double",
-    "selector-list-comma-newline-after": "always",
-    "block-opening-brace-space-before": "always",
-    "block-closing-brace-newline-after": "always",
-    "declaration-block-semicolon-newline-after": "always-multi-line",
-    "declaration-block-trailing-semicolon": "always",
-    "function-comma-space-after": "always-single-line",
-    "number-leading-zero": "never",
     "declaration-block-no-duplicate-properties": true,
     "no-duplicate-selectors": true,
     "function-calc-no-unspaced-operator": true,
@@ -24,6 +14,14 @@
         "ignore": ["after-comment"]
       }
     ],
-    "comment-empty-line-before": "always"
+    "comment-empty-line-before": "always",
+    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9]*$",
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested", "after-dollar-variable"],
+        "ignore": ["after-comment"]
+      }
+    ]
   }
 }

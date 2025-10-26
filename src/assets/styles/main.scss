@@ -4,6 +4,11 @@
  */
 
 /**
+* Import abstracts
+ */
+@use "abstracts/index" as abstracts;
+
+/**
  * Import dependencies
  */
 @use "dependencies";
@@ -11,7 +16,7 @@
 /**
 * Import base structures
 */
-@use "base/index";
+@use "base/index" as base;
 
 /**
  * Import layouts

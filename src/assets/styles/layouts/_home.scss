@@ -18,6 +18,17 @@ section {
   flex-direction: column;
 }
 
+.section-container {
+  display: flex;
+  height: 100vh;
+
+  & > article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .uoc-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;

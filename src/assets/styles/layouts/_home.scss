@@ -11,9 +11,9 @@ body {
 
 section {
   width: 100%;
-  // TODO: Quitar el margin y el color de fondo
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .section-container {

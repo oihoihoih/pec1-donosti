@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+@use "./intro-animations" as *;
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin: 2rem 0;
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 15s linear infinite;
+    width: fit-content;
+  }
+
+  &__text {
+    font-family: $body-font;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}

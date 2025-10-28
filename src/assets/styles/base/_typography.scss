@@ -10,6 +10,7 @@ h2 {
   font-family: $display-serif-l;
   text-transform: uppercase;
   font-size: clamp(3rem, 9.5vw, 8.5rem);
+  line-height: 1;
 }
 
 h3 {

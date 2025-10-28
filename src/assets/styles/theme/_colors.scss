@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+// Background colors
+.bg-primary-blue {
+  background-color: $primary-blue;
+}
+
+.bg-primary-yellow {
+  background-color: $primary-yellow;
+}
+
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
+// Colors
+
+.light-gray {
+  color: $light-gray;
+}

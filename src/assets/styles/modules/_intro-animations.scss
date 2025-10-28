@@ -5,10 +5,90 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  overflow: hidden;
 
   & h4 {
     position: absolute;
     bottom: 8rem;
     right: 8rem;
+    transform-origin: bottom right;
+    transform: translateX(0%) rotate(-45deg) scale(1);
+    animation: bouncy 0.5s ease-in-out;
+  }
+
+  & h4::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 3px solid $light-gray;
+    border-right: 3px solid $light-gray;
+    border-radius: 0 0 100% 0;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes bouncy {
+  0% {
+    transform: translateX(120%) rotate(-135deg) scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(-10deg) scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(-60deg) scale(0.9);
+  }
+
+  100% {
+    transform: translateX(0%) rotate(-45deg) scale(1);
+  }
+}
+
+.sun {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: clamp(80px, 10vw, 200px);
+  height: auto;
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: -600px;
+  animation: moveCloud linear infinite;
+
+  &--1 {
+    top: 15%;
+    width: clamp(40vw, 50vw, 800px);
+    animation-duration: 20s;
+    animation-delay: 0s;
+  }
+
+  &--2 {
+    top: 60%;
+    width: clamp(30vw, 40vw, 600px);
+    animation-duration: 30s;
+    animation-delay: 4s;
+  }
+
+  &--3 {
+    top: 55%;
+    width: clamp(15vw, 20vw, 400px);
+    animation-duration: 35s;
+    animation-delay: 6s;
+  }
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translateX(-200px) scale(var(--scale, 1));
+  }
+  100% {
+    transform: translateX(150vw) scale(var(--scale, 1));
   }
 }

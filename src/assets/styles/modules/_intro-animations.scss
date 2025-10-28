@@ -1,6 +1,14 @@
 @use "../abstracts" as *;
 
 .intro-animation {
+  position: relative;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
+
+  & h4 {
+    position: absolute;
+    bottom: 8rem;
+    right: 8rem;
+  }
 }

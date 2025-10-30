@@ -2,15 +2,29 @@
  * Import dependencies from node_modules
  * see commented examples below
  */
-
-// import 'some-node-module';
-// import SomeModule from 'some-node-module';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Write any other JavaScript below
  */
 
-+(function () {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
-})();
+// events: "onEnter onLeave onEnterBack onLeaveBack",
+// options: play, pause, resume, reset, restart, complete,
+
+gsap.utils.toArray(".bouncy").forEach((item) => {
+  gsap.from(item, {
+    y: 100,
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "bounce.out",
+    scrollTrigger: {
+      trigger: item,
+      start: "top 80%",
+      end: "bottom 30%",
+      toggleActions: "play none none none",
+    },
+  });
+});

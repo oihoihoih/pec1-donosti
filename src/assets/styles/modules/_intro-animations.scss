@@ -11,26 +11,6 @@
   }
 }
 
-@keyframes bouncy {
-  0% {
-    transform: translateX(120%) rotate(-135deg) scale(0.3);
-    opacity: 0;
-  }
-
-  60% {
-    transform: rotate(-10deg) scale(1.1);
-    opacity: 1;
-  }
-
-  80% {
-    transform: rotate(-60deg) scale(0.9);
-  }
-
-  100% {
-    transform: translateX(0%) rotate(-45deg) scale(1);
-  }
-}
-
 @keyframes moveCloud {
   0% {
     transform: translateX(-200px) scale(var(--scale, 1));

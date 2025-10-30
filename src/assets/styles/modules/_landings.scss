@@ -92,6 +92,7 @@
   animation:
     scrollLeft ease-in infinite,
     opacityFade ease-in infinite;
+
   &--1 {
     top: 25%;
     width: 60vw;
@@ -112,6 +113,7 @@
     animation-duration: 3s;
     animation-delay: 1s;
   }
+
   &--4 {
     top: 54%;
     right: -30%;

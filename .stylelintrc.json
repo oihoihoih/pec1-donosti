@@ -11,11 +11,12 @@
     "rule-empty-line-before": [
       "always-multi-line",
       {
+        "except": ["first-nested"],
         "ignore": ["after-comment"]
       }
     ],
     "comment-empty-line-before": "always",
-    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9]*$",
+    "scss/dollar-variable-pattern": "^[a-z][a-z0-9-]*$",
     "scss/dollar-variable-empty-line-before": [
       "always",
       {

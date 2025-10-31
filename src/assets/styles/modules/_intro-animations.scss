@@ -44,3 +44,17 @@
     opacity: 0;
   }
 }
+
+// Snowflake animation styles
+.snowflake {
+  position: absolute;
+  pointer-events: none; // Los copos no interfieren con la interacción
+  z-index: 10; // Aparecen por encima del contenido
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); // Sutil sombra blanca
+}
+
+// Estilo específico para la sección de nieve
+#nieve {
+  position: relative;
+  overflow: hidden; // Los copos no se salen de la sección
+}

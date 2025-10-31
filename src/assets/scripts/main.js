@@ -75,3 +75,64 @@ gsap.utils.toArray(".main-card").forEach((card) => {
 
 // events: "onEnter onLeave onEnterBack onLeaveBack",
 // options: play, pause, resume, reset, restart,
+
+// Nieve animation
+function createSnowAnimation() {
+  const nieveSection = document.querySelector("#nieve");
+  const originalSnowflake = nieveSection.querySelector(".snowflake");
+
+  if (!originalSnowflake || !nieveSection) return;
+
+  const numberOfSnowflakes = 20;
+  const snowflakes = [];
+
+  // Crear copos de nieve clonando el original
+  for (let i = 0; i < numberOfSnowflakes; i++) {
+    const snowflake = originalSnowflake.cloneNode(true);
+    snowflake.classList.remove("snowflake--1");
+    snowflake.classList.add(`snowflake--${i + 2}`);
+
+    // Posición inicial aleatoria
+    gsap.set(snowflake, {
+      x: Math.random() * window.innerWidth,
+      y: -150,
+      scale: Math.random() * 0.5 + 0.5,
+      opacity: Math.random() * 0.7 + 0.3,
+      rotation: Math.random() * 360,
+    });
+
+    nieveSection.appendChild(snowflake);
+    snowflakes.push(snowflake);
+  }
+
+  // Animar cada copo de nieve
+  snowflakes.forEach((snowflake) => {
+    const fallDuration = Math.random() * 3 + 6; // 2-5 s duration
+    const horizontalMovement = Math.random() * 100 - 50; // Horizontal random movement
+
+    gsap.to(snowflake, {
+      y: window.innerHeight + 50, // Disapears to bottom of screen
+      x: `+=${horizontalMovement}`,
+      rotation: `+=${Math.random() * 360 + 180}`,
+      duration: fallDuration,
+      ease: "none",
+      repeat: -1, // Repetir infinitamente
+      delay: Math.random() * 2, // Delay aleatorio para que no caigan todos a la vez
+      onComplete: () => {
+        // Cuando termina, reposicionar arriba para crear loop infinito
+        gsap.set(snowflake, {
+          y: -50,
+          x: Math.random() * window.innerWidth,
+        });
+      },
+    });
+  });
+}
+
+// Activar animación de nieve cuando se llega a la sección
+ScrollTrigger.create({
+  trigger: "#nieve",
+  start: "top bottom",
+  onEnter: () => createSnowAnimation(),
+  once: true, // Solo ejecutar una vez
+});

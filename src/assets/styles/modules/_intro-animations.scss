@@ -61,12 +61,9 @@
 // Estilo específico para la sección de nieve
 #nieve {
   position: relative;
-  overflow: hidden; // Los copos no se salen de la sección
+  overflow: visible; // Cambiar a visible para que los copos no se corten
   min-height: 100vh; // Ocupa toda la pantalla
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100vw; // Asegurar que ocupe todo el ancho
 }
 
 // Contenido de texto centrado en la sección nieve

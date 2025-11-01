@@ -143,6 +143,15 @@ function createSnowAnimation() {
 
   const numberOfSnowflakes = 20;
   const snowflakes = [];
+  
+  // Obtener el ancho real del viewport de forma más robusta
+  const getViewportWidth = () => {
+    return Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0,
+      nieveSection.offsetWidth
+    );
+  };
 
   // Crear copos de nieve clonando el original
   for (let i = 0; i < numberOfSnowflakes; i++) {
@@ -152,7 +161,7 @@ function createSnowAnimation() {
 
     // Posición inicial aleatoria
     gsap.set(snowflake, {
-      x: Math.random() * window.innerWidth,
+      x: Math.random() * getViewportWidth(),
       y: -500,
       scale: Math.random() * 0.5 + 0.5,
       opacity: Math.random() * 0.7 + 0.3,
@@ -165,7 +174,7 @@ function createSnowAnimation() {
 
   // Animar cada copo de nieve
   snowflakes.forEach((snowflake) => {
-    const fallDuration = Math.random() * 3 + 6; // 2-5 s duration
+    const fallDuration = Math.random() * 3 + 6; // 6-9 s duration
     const horizontalMovement = Math.random() * 100 - 50; // Horizontal random movement
 
     gsap.to(snowflake, {
@@ -179,7 +188,7 @@ function createSnowAnimation() {
       onComplete: () => {
         gsap.set(snowflake, {
           y: -50,
-          x: Math.random() * window.innerWidth,
+          x: Math.random() * getViewportWidth(), // También aquí usar función robusta
         });
       },
     });

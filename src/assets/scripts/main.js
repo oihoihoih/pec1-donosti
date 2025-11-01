@@ -153,7 +153,7 @@ function createSnowAnimation() {
     // Posición inicial aleatoria
     gsap.set(snowflake, {
       x: Math.random() * window.innerWidth,
-      y: -150,
+      y: -500,
       scale: Math.random() * 0.5 + 0.5,
       opacity: Math.random() * 0.7 + 0.3,
       rotation: Math.random() * 360,
@@ -174,10 +174,9 @@ function createSnowAnimation() {
       rotation: `+=${Math.random() * 360 + 180}`,
       duration: fallDuration,
       ease: "none",
-      repeat: -1, // Repetir infinitamente
-      delay: Math.random() * 2, // Delay aleatorio para que no caigan todos a la vez
+      repeat: -1, // Repeat infinite
+      delay: Math.random() * 3, // Random delay
       onComplete: () => {
-        // Cuando termina, reposicionar arriba para crear loop infinito
         gsap.set(snowflake, {
           y: -50,
           x: Math.random() * window.innerWidth,
@@ -193,4 +192,41 @@ ScrollTrigger.create({
   start: "top bottom",
   onEnter: () => createSnowAnimation(),
   once: true, // Solo ejecutar una vez
+});
+
+// Animación del texto de la sección nieve - Escalonada
+ScrollTrigger.create({
+  trigger: "#nieve",
+  start: "top 70%",
+  onEnter: () => {
+    // Timeline para animación escalonada
+    const nieveTimeline = gsap.timeline();
+
+    // Primero aparece el título (h2)
+    nieveTimeline
+      .to(".nieve-title", {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.7)",
+      })
+      // Después aparece el párrafo con un delay
+      .to(
+        ".nieve-text",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+        },
+        "+=0.3"
+      ); // 0.3 segundos después del título
+  },
+  once: true,
+});
+
+// Estado inicial del texto de nieve
+gsap.set([".nieve-title", ".nieve-text"], {
+  scale: 0.5, // Empiezan pequeños
+  opacity: 0,
 });

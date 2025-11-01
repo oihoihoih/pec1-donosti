@@ -53,8 +53,40 @@
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); // Sutil sombra blanca
 }
 
+// Ocultar el copo original que se usa para clonar
+.snowflake:first-of-type {
+  display: none; // El copo original no se ve
+}
+
 // Estilo específico para la sección de nieve
 #nieve {
   position: relative;
   overflow: hidden; // Los copos no se salen de la sección
+  min-height: 100vh; // Ocupa toda la pantalla
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Contenido de texto centrado en la sección nieve
+.nieve-text-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 20; // Por encima de los copos de nieve
+}
+
+// Usar los estilos existentes de main-card pero con estado inicial para animación
+.nieve-title {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.nieve-text {
+  opacity: 0;
+  transform: scale(0.5);
+  max-width: 600px;
 }

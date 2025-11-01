@@ -1,32 +1,5 @@
 @use "../abstracts" as *;
 
-body {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  margin: 0;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.section-container {
-  display: flex;
-  height: 100vh;
-
-  & > article {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .uoc-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;

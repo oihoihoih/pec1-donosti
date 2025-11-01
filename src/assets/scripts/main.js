@@ -50,6 +50,7 @@ ScrollTrigger.create({
   start: "top 30%",
   end: "top top",
   scrub: true,
+  toggleActions: "play reset none reverse",
   animation: gsap.fromTo(
     ".sun",
     {
@@ -62,6 +63,28 @@ ScrollTrigger.create({
       position: "fixed",
     }
   ),
+});
+
+// Sun disappear animation when leaving Sol section
+ScrollTrigger.create({
+  trigger: "#sol",
+  start: "bottom top",
+  end: "bottom top",
+  toggleActions: "none none none reverse",
+  onLeave: () => {
+    gsap.to(".sun", {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  },
+  onEnterBack: () => {
+    gsap.to(".sun", {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  },
 });
 
 // Main-card entrance animation (from bottom to top)
@@ -82,31 +105,33 @@ gsap.utils.toArray(".main-card").forEach((card) => {
 });
 
 // Horizontal scroll animation for .places
-const places = document.querySelector(".places");
+const placesElements = document.querySelectorAll(".places");
 
-function getScrollAmount() {
-  const containers = places.querySelectorAll(".info-card-container");
-  
-  // Calculamos el scroll necesario para que el último contenedor se vea completamente
+function getScrollAmount(placesElement) {
+  const containers = placesElement.querySelectorAll(".info-card-container");
+
+  // Calculate scroll
   const lastContainerStart = containers[containers.length - 1].offsetLeft;
   return -lastContainerStart;
 }
 
-const tween = gsap.to(places, {
-  x: getScrollAmount,
-  duration: 6,
-  ease: "none",
-});
+placesElements.forEach((places, index) => {
+  const tween = gsap.to(places, {
+    x: () => getScrollAmount(places),
+    duration: 6,
+    ease: "none",
+  });
 
-ScrollTrigger.create({
-  trigger: ".places-wrapper",
-  start: "top top",
-  end: () => `+=${getScrollAmount() * -1}`,
-  pin: true,
-  pinSpacing: true,
-  animation: tween,
-  scrub: 1,
-  invalidateOnRefresh: true,
+  ScrollTrigger.create({
+    trigger: places.closest(".places-wrapper"), // To select various .places-wrapper
+    start: "top top",
+    end: () => `+=${getScrollAmount(places) * -1}`,
+    pin: true,
+    pinSpacing: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+  });
 });
 
 // Nieve animation

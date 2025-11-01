@@ -23,6 +23,7 @@
   <include src="./views/navigation.html"></include>
 
   <!-- Content -->
+  <!-- LANDING ANIMATION -->
   <section id="intro" class="main-landing bg-primary-blue">
     <div class="marquee">
       <div class="marquee__track light-gray">
@@ -100,12 +101,10 @@
     </div>
   </section>
 
-  <!-- SOL -->
+  <!-- SUN INTRO ANIMATION -->
   <section id="sol">
-    <!-- Intro-animation -->
-    <figure class="gsap-section-intro intro-animation bg-primary-blue">
+    <figure class="intro-animation bg-primary-blue">
       <figcaption>
-        <!-- Elementos de la animación -->
         <img src="./assets/images/sun.svg" class="sun" alt="Sol">
         <img src="./assets/images/big-cloud.svg" class="cloud cloud--1" alt="Nube 1">
         <img src="./assets/images/big-cloud.svg" class="cloud cloud--2" alt="Nube 2">
@@ -116,57 +115,187 @@
         </h4>
       </figcaption>
     </figure>
+  </section>
 
-    <article class="gsap-section-intro section-container">
-      <div class="main-card">
-        <div class="main-card__inner">
-          <h2 class="main-card__title ">Sol</h2>
-          <p class="main-card__text">
-            Estáis en la ciudad más lluviosa de España, por lo que no dejéis
-            pasar la ocasión para hacer planes en el exterior, es probable que
-            no dure mucho!
-          </p>
-        </div>
+  <!-- WEATHER INFO + PLACES. SUN -->
+  <section>
+    <article class="main-card">
+      <div class="main-card__inner">
+        <h2 class="main-card__title ">Sol</h2>
+        <p class="main-card__text">
+          Estáis en la ciudad más lluviosa de España, por lo que no dejéis
+          pasar la ocasión para hacer planes en el exterior, es probable que
+          no dure mucho!
+        </p>
       </div>
+    </article>
 
-      <div class="info-card-container">
-        <figure class="background-image">
-          <picture>
-            <source
-              srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
-              type="image/webp" />
-            <img src="./assets/images/isla-santa-clara-1600.jpg"
-              srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
-              alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
-          </picture>
+    <!-- PLACES WITH CARDS -->
+    <article class="places-wrapper">
+      <div class="places">
+        <div class="info-card-container">
+          <figure class="background-image">
+            <picture>
+              <source
+                srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
+                type="image/webp" />
+              <img src="./assets/images/isla-santa-clara-1600.jpg"
+                srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
+                alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
+            </picture>
 
-          <!-- Atribución de la imagen:
+            <!-- Atribución de la imagen:
               Foto de <a href="https://unsplash.com/es/@sidsaxena?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sid Saxena</a> en <a href="https://unsplash.com/es/fotos/fotografia-del-oceano-azul-sCxtpdfRFkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
        -->
 
-          <figcaption class="info-card bg-primary-blue light-gray">
-            <h3>Isla de Santa Clara</h3>
-            <p>
-              Seguro que conoces la Bahía de la Concha, pero sabías que la isla
-              que ves enfrente, también es visitable? Desde el puerto a diario
-              sale un barco, con una frecuencia de 30 minutos que te puede
-              llevar directamente allí. Si estás de suerte y la marea está baja,
-              podrás disfutar además de una encantadora playita por donde podrás
-              ver la Concha desde el otro lado.
-            </p>
-            <button>+ info</button>
-          </figcaption>
-        </figure>
+            <figcaption class="info-card bg-primary-blue light-gray">
+              <h3>Isla de Santa Clara</h3>
+              <p>
+                Seguro que conoces la Bahía de la Concha, pero sabías que la isla
+                que ves enfrente, también es visitable? Desde el puerto a diario
+                sale un barco, con una frecuencia de 30 minutos que te puede
+                llevar directamente allí. Si estás de suerte y la marea está baja,
+                podrás disfutar además de una encantadora playita por donde podrás
+                ver la Concha desde el otro lado.
+              </p>
+              <button>+ info</button>
+            </figcaption>
+          </figure>
 
+        </div>
+
+        <!-- Isla de Santa Clara -->
+        <div class="info-card-container">
+          <figure class="background-image">
+            <picture>
+              <source
+                srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
+                type="image/webp" />
+              <img src="./assets/images/isla-santa-clara-1600.jpg"
+                srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
+                alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
+            </picture>
+
+            <!-- Atribución de la imagen:
+              Foto de <a href="https://unsplash.com/es/@sidsaxena?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sid Saxena</a> en <a href="https://unsplash.com/es/fotos/fotografia-del-oceano-azul-sCxtpdfRFkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       -->
+
+            <figcaption class="info-card bg-primary-blue light-gray">
+              <h3>Isla de Santa Clara</h3>
+              <p>
+                Seguro que conoces la Bahía de la Concha, pero sabías que la isla
+                que ves enfrente, también es visitable? Desde el puerto a diario
+                sale un barco, con una frecuencia de 30 minutos que te puede
+                llevar directamente allí. Si estás de suerte y la marea está baja,
+                podrás disfutar además de una encantadora playita por donde podrás
+                ver la Concha desde el otro lado.
+              </p>
+              <button>+ info</button>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Isla de Santa Clara -->
+        <div class="info-card-container">
+          <figure class="background-image">
+            <picture>
+              <source
+                srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
+                type="image/webp" />
+              <img src="./assets/images/isla-santa-clara-1600.jpg"
+                srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
+                alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
+            </picture>
+
+            <!-- Atribución de la imagen:
+              Foto de <a href="https://unsplash.com/es/@sidsaxena?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sid Saxena</a> en <a href="https://unsplash.com/es/fotos/fotografia-del-oceano-azul-sCxtpdfRFkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       -->
+
+            <figcaption class="info-card bg-primary-blue light-gray">
+              <h3>Isla de Santa Clara</h3>
+              <p>
+                Seguro que conoces la Bahía de la Concha, pero sabías que la isla
+                que ves enfrente, también es visitable? Desde el puerto a diario
+                sale un barco, con una frecuencia de 30 minutos que te puede
+                llevar directamente allí. Si estás de suerte y la marea está baja,
+                podrás disfutar además de una encantadora playita por donde podrás
+                ver la Concha desde el otro lado.
+              </p>
+              <button>+ info</button>
+            </figcaption>
+          </figure>
+
+        </div>
+        <!-- Isla de Santa Clara -->
+        <div class="info-card-container">
+          <figure class="background-image">
+            <picture>
+              <source
+                srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
+                type="image/webp" />
+              <img src="./assets/images/isla-santa-clara-1600.jpg"
+                srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
+                alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
+            </picture>
+
+            <!-- Atribución de la imagen:
+              Foto de <a href="https://unsplash.com/es/@sidsaxena?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sid Saxena</a> en <a href="https://unsplash.com/es/fotos/fotografia-del-oceano-azul-sCxtpdfRFkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       -->
+
+            <figcaption class="info-card bg-primary-blue light-gray">
+              <h3>Isla de Santa Clara</h3>
+              <p>
+                Seguro que conoces la Bahía de la Concha, pero sabías que la isla
+                que ves enfrente, también es visitable? Desde el puerto a diario
+                sale un barco, con una frecuencia de 30 minutos que te puede
+                llevar directamente allí. Si estás de suerte y la marea está baja,
+                podrás disfutar además de una encantadora playita por donde podrás
+                ver la Concha desde el otro lado.
+              </p>
+              <button>+ info</button>
+            </figcaption>
+          </figure>
+
+        </div>
+        <!-- Isla de Santa Clara -->
+        <div class="info-card-container">
+          <figure class="background-image">
+            <picture>
+              <source
+                srcset="./assets/images/isla-santa-clara-800.webp 800w, ./assets/images/isla-santa-clara-1600.webp 1600w, ./assets/images/isla-santa-clara-2400.webp 2400w"
+                type="image/webp" />
+              <img src="./assets/images/isla-santa-clara-1600.jpg"
+                srcset="./assets/images/isla-santa-clara-800.jpg 800w, ./assets/images/isla-santa-clara-1600.jpg 1600w, ./assets/images/isla-santa-clara-2400.jpg 2400w"
+                alt="Vista de la Isla de Santa Clara desde la Bahía de la Concha" class="card__image" />
+            </picture>
+
+            <!-- Atribución de la imagen:
+              Foto de <a href="https://unsplash.com/es/@sidsaxena?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sid Saxena</a> en <a href="https://unsplash.com/es/fotos/fotografia-del-oceano-azul-sCxtpdfRFkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       -->
+
+            <figcaption class="info-card bg-primary-blue light-gray">
+              <h3>Isla de Santa Clara</h3>
+              <p>
+                Seguro que conoces la Bahía de la Concha, pero sabías que la isla
+                que ves enfrente, también es visitable? Desde el puerto a diario
+                sale un barco, con una frecuencia de 30 minutos que te puede
+                llevar directamente allí. Si estás de suerte y la marea está baja,
+                podrás disfutar además de una encantadora playita por donde podrás
+                ver la Concha desde el otro lado.
+              </p>
+              <button>+ info</button>
+            </figcaption>
+          </figure>
+
+        </div>
       </div>
-
     </article>
   </section>
 
   <!-- VIENTO -->
+  <!-- WEATHER INTRO ANIMATION -->
   <section id="viento">
-    <figure class="gsap-section-intro intro-animation bg-primary-blue">
-      <!-- Wind Intro animation -->
+    <figure class="intro-animation bg-primary-blue">
       <figcaption>
         <img src="./assets/images/wind.svg" class="wind wind--1" alt="Viento">
         <img src="./assets/images/wind.svg" class="wind wind--2" alt="Viento">
@@ -177,46 +306,47 @@
           Qué viento!!</h4>
       </figcaption>
     </figure>
+  </section>
 
-    <article class="gsap-section-intro section-container">
-      <div class="main-card light-gray">
-        <div class="main-card__inner">
-          <h2 class="main-card__title">Viento</h2>
-          <p class="main-card__text">
-            El tiempo es muy cambiante en esta ciudad. Su ubicación entre el mar
-            y la montaña hace que el clima pueda ser muy variable. Ojo, que
-            después del viento, muchas veces viene la lluvia!
-          </p>
-        </div>
+  <section>
+    <article class="main-card light-gray">
+      <div class="main-card__inner">
+        <h2 class="main-card__title">Viento</h2>
+        <p class="main-card__text">
+          El tiempo es muy cambiante en esta ciudad. Su ubicación entre el mar
+          y la montaña hace que el clima pueda ser muy variable. Ojo, que
+          después del viento, muchas veces viene la lluvia!
+        </p>
       </div>
+    </article>
 
-      <div class="info-module">
-        <figure class="background-image">
-          <picture>
-            <source
-              srcset="./assets/images/peine-de-los-vientos-800.webp 800w, ./assets/images/peine-de-los-vientos-1600.webp 1600w, ./assets/images/peine-de-los-vientos-2400.webp 2400w"
-              type="image/webp" />
-            <img src="./assets/images/peine-de-los-vientos-1600.jpg"
-              srcset="./assets/images/peine-de-los-vientos-800.jpg 800w, ./assets/images/peine-de-los-vientos-1600.jpg 1600w, ./assets/images/peine-de-los-vientos-2400.jpg 2400w"
-              alt="Escultura del Peine de los Vientos con el mar revuelto" class="card__image" />
-          </picture>
-          <!-- Foto de <a href="https://unsplash.com/es/@jvich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jordi Vich Navarro</a> en <a href="https://unsplash.com/es/fotos/una-gran-roca-con-una-escultura-sentada-encima-de-ella-junto-al-oceano-NY63daJ4r0o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    <article class="info-card-container">
+      <figure class="background-image">
+        <picture>
+          <source
+            srcset="./assets/images/peine-de-los-vientos-800.webp 800w, ./assets/images/peine-de-los-vientos-1600.webp 1600w, ./assets/images/peine-de-los-vientos-2400.webp 2400w"
+            type="image/webp" />
+          <img src="./assets/images/peine-de-los-vientos-1600.jpg"
+            srcset="./assets/images/peine-de-los-vientos-800.jpg 800w, ./assets/images/peine-de-los-vientos-1600.jpg 1600w, ./assets/images/peine-de-los-vientos-2400.jpg 2400w"
+            alt="Escultura del Peine de los Vientos con el mar revuelto" class="card__image" />
+        </picture>
+        <!-- Foto de <a href="https://unsplash.com/es/@jvich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jordi Vich Navarro</a> en <a href="https://unsplash.com/es/fotos/una-gran-roca-con-una-escultura-sentada-encima-de-ella-junto-al-oceano-NY63daJ4r0o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
        -->
-        </figure>
+      </figure>
 
-        <figcaption class="info-card">
-          <h3>El Peine de los Vientos</h3>
-          <p>¿Sabías que Donosti tiene un monumento al viento?</p>
-          <p>
-            Es el Peine del Viento, aunque popularmente, se le llama Peine de
-            los Vientos. Obra del artista vasco Eduardo Chillida, creado en
-            1977. En este enclave podrás sentir y escuchar la fuerza del mar.
-            En el suelo del mirador hayunos tubos de ventilación que expulsan
-            aire cuando el mar golpea las rocas, generando chorros de viento y
-            sonido: una interacción directa entre la naturaleza y la obra.
-          </p>
-          <button>+ info</button>
-        </figcaption>
+      <figcaption class="info-card">
+        <h3>El Peine de los Vientos</h3>
+        <p>¿Sabías que Donosti tiene un monumento al viento?</p>
+        <p>
+          Es el Peine del Viento, aunque popularmente, se le llama Peine de
+          los Vientos. Obra del artista vasco Eduardo Chillida, creado en
+          1977. En este enclave podrás sentir y escuchar la fuerza del mar.
+          En el suelo del mirador hayunos tubos de ventilación que expulsan
+          aire cuando el mar golpea las rocas, generando chorros de viento y
+          sonido: una interacción directa entre la naturaleza y la obra.
+        </p>
+        <button>+ info</button>
+      </figcaption>
       </div>
     </article>
   </section>
@@ -224,7 +354,7 @@
   <!-- LLUVIA -->
   <section id="lluvia">
     <!-- Intro-animation -->
-    <figure class="gsap-section-intro intro-animation bg-dark-gray">
+    <figure class="intro-animation bg-dark-gray">
       <figcaption>
         <img src="./assets/images/big-cloud.svg" class="cloud cloud--1" alt="Nube 1">
         <img src="./assets/images/big-cloud.svg" class="cloud cloud--2" alt="Nube 2">
@@ -236,47 +366,48 @@
         </h4>
       </figcaption>
     </figure>
+  </section>
 
-    <article class="gsap-section-intro section-container">
-      <div class="main-card">
-        <div class="main-card__inner primary-blue">
-          <h2 class="main-card__title">Lluvia</h2>
-          <p class="main-card__text">
-            Ya estabais avisados, en Donosti, llueve mucho. Al mal tiempo, buena
-            cara! Si llueve fino y constante, no te preocupes, es muy típico. Se
-            le llama xirimiri.
-          </p>
-        </div>
+  <section>
+    <article class="main-card">
+      <div class="main-card__inner primary-blue">
+        <h2 class="main-card__title">Lluvia</h2>
+        <p class="main-card__text">
+          Ya estabais avisados, en Donosti, llueve mucho. Al mal tiempo, buena
+          cara! Si llueve fino y constante, no te preocupes, es muy típico. Se
+          le llama xirimiri.
+        </p>
       </div>
+    </article>
 
-      <div class="info-module">
-        <figure class="background-image">
-          <picture>
-            <source
-              srcset="./assets/images/plaza-consti-800.webp 800w, ./assets/images/plaza-consti-1600.webp 1600w, ./assets/images/plaza-consti-2400.webp 2400w"
-              type="image/webp" />
-            <img src="./assets/images/plaza-consti-1600.jpg"
-              srcset="./assets/images/plaza-consti-800.jpg 800w, ./assets/images/plaza-consti-1600.jpg 1600w, ./assets/images/plaza-consti-2400.jpg 2400w"
-              alt="Vista de la Plaza de la Constitución de San Sebastián" class="card__image" />
-          </picture>
-          <!-- Atribución de la imagen:
+    <article class="info-card-container">
+      <figure class="background-image">
+        <picture>
+          <source
+            srcset="./assets/images/plaza-consti-800.webp 800w, ./assets/images/plaza-consti-1600.webp 1600w, ./assets/images/plaza-consti-2400.webp 2400w"
+            type="image/webp" />
+          <img src="./assets/images/plaza-consti-1600.jpg"
+            srcset="./assets/images/plaza-consti-800.jpg 800w, ./assets/images/plaza-consti-1600.jpg 1600w, ./assets/images/plaza-consti-2400.jpg 2400w"
+            alt="Vista de la Plaza de la Constitución de San Sebastián" class="card__image" />
+        </picture>
+        <!-- Atribución de la imagen:
              Foto de <a href="https://unsplash.com/es/@lavilainecrampe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vincent Soleil</a> en <a href="https://unsplash.com/es/fotos/personas-caminando-cerca-de-un-edificio-de-hormigon-beige-durante-el-dia-iLvGUqzknFg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
        -->
-        </figure>
+      </figure>
 
-        <figcaption class="info-card bg-primary-blue light-gray">
-          <h3>Pintxos</h3>
-          <p>
-            Aprovechando que el día está lluvioso, podéis aprovechar para ir a
-            la Parte Vieja y hacer un poco de “poteo”.
-          </p>
-          <p>
-            Esta costumbre, tan arraigada en Donosti consiste en ir de bar en
-            bar. Y sí, es una ciudad en la que se bebe mucho con amigos. No os
-            olvidéis de ir probando pintxos allí donde entréis. Os sorprenderá
-            la inmensa variedad.
-          </p>
-        </figcaption>
+      <figcaption class="info-card bg-primary-blue light-gray">
+        <h3>Pintxos</h3>
+        <p>
+          Aprovechando que el día está lluvioso, podéis aprovechar para ir a
+          la Parte Vieja y hacer un poco de “poteo”.
+        </p>
+        <p>
+          Esta costumbre, tan arraigada en Donosti consiste en ir de bar en
+          bar. Y sí, es una ciudad en la que se bebe mucho con amigos. No os
+          olvidéis de ir probando pintxos allí donde entréis. Os sorprenderá
+          la inmensa variedad.
+        </p>
+      </figcaption>
       </div>
     </article>
   </section>
@@ -291,19 +422,17 @@
         <h4 class="bouncy">¿En serio?</h4>
       </figcaption>
     </figure>
+  </section>
 
-    <div class="section-container">
-      <article class="main-card">
-        <div class="main-card__inner ">
-          <!-- TODO: Darle estilo para que aparezca centrado -->
-          <h2 class="main-card__title">Nieve</h2>
-          <p class="main-card__text">
-            No.... si está nevando probablemente estés en otra ciudad!
-          </p>
-        </div>
-      </article>
-    </div>
-    </p>
+  <section>
+    <article class="main-card">
+      <div class="main-card__inner ">
+        <!-- TODO: Darle estilo para que aparezca centrado -->
+        <h2 class="main-card__title">Nieve</h2>
+        <p class="main-card__text">
+          No.... si está nevando probablemente estés en otra ciudad!
+        </p>
+      </div>
     </article>
   </section>
 

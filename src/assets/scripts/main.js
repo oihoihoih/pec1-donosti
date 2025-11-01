@@ -82,13 +82,14 @@ gsap.utils.toArray(".main-card").forEach((card) => {
 });
 
 // Horizontal scroll animation for .places
-// TODO: Cambiar querySelector a querySelectorAll
 const places = document.querySelector(".places");
-const placesWidth = places.offsetWidth;
 
 function getScrollAmount() {
-  let placesWidth = places.scrollWidth;
-  return -(placesWidth - window.innerWidth);
+  const containers = places.querySelectorAll(".info-card-container");
+  
+  // Calculamos el scroll necesario para que el último contenedor se vea completamente
+  const lastContainerStart = containers[containers.length - 1].offsetLeft;
+  return -lastContainerStart;
 }
 
 const tween = gsap.to(places, {

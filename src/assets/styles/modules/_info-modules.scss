@@ -6,7 +6,6 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  padding: 0 2rem;
 }
 
 .background-image {
@@ -29,6 +28,7 @@
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
+  gap: 2rem;
   will-change: transform;
 }
 
@@ -39,12 +39,7 @@
 
 /* Estilos para las tarjetas de información */
 .info-card {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
   padding: 2rem;
-  backdrop-filter: blur(10px);
   border-radius: 1rem;
   z-index: 1;
 

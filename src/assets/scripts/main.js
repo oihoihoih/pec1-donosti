@@ -20,28 +20,34 @@ gsap.utils.toArray(".bouncy").forEach((item) => {
     ease: "bounce.out",
     scrollTrigger: {
       trigger: item,
-      start: "top 80%",
+      start: "top 90%",
       end: "bottom 30%",
-      toggleActions: "play none none none",
+      toggleActions: "play reset restart restart",
+      markers: false,
+      invalidateOnRefresh: true,
+      refreshPriority: -1,
     },
   });
 });
 
+// events: "onEnter onLeave onEnterBack onLeaveBack",
+// options: play, pause, resume, reset, restart,
+
 // Animation of sections intro
-gsap.utils.toArray(".gsap-section-intro").forEach((section) => {
-  ScrollTrigger.create({
-    trigger: section,
-    start: "top top",
-    pin: true,
-    pinSpacing: false,
-    markers: false,
-  });
-});
+// gsap.utils.toArray(".gsap-section-intro").forEach((section) => {
+//   ScrollTrigger.create({
+//     trigger: section,
+//     start: "top top",
+//     pin: false,
+//     pinSpacing: false,
+//     markers: true,
+//   });
+// });
 
 // Sun scaling animation
 ScrollTrigger.create({
-  trigger: "#sol .section-container",
-  start: "top bottom",
+  trigger: ".sun",
+  start: "top 30%",
   end: "top top",
   scrub: true,
   animation: gsap.fromTo(
@@ -53,6 +59,7 @@ ScrollTrigger.create({
     {
       scale: 25,
       ease: "power2.out",
+      position: "fixed",
     }
   ),
 });
@@ -69,12 +76,37 @@ gsap.utils.toArray(".main-card").forEach((card) => {
       start: "top 90%",
       end: "top 70%",
       toggleActions: "play none none reverse",
+      markers: false,
     },
   });
 });
 
-// events: "onEnter onLeave onEnterBack onLeaveBack",
-// options: play, pause, resume, reset, restart,
+// Horizontal scroll animation for .places
+// TODO: Cambiar querySelector a querySelectorAll
+const places = document.querySelector(".places");
+const placesWidth = places.offsetWidth;
+
+function getScrollAmount() {
+  let placesWidth = places.scrollWidth;
+  return -(placesWidth - window.innerWidth);
+}
+
+const tween = gsap.to(places, {
+  x: getScrollAmount,
+  duration: 6,
+  ease: "none",
+});
+
+ScrollTrigger.create({
+  trigger: ".places-wrapper",
+  start: "top top",
+  end: () => `+=${getScrollAmount() * -1}`,
+  pin: true,
+  pinSpacing: true,
+  animation: tween,
+  scrub: 1,
+  invalidateOnRefresh: true,
+});
 
 // Nieve animation
 function createSnowAnimation() {

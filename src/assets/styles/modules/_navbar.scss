@@ -25,6 +25,12 @@ nav {
   }
 }
 
+.logo {
+  font-family: $display-serif-l;
+  text-transform: uppercase;
+  color: $primary-blue;
+}
+
 .navigation {
   height: 100%;
   margin-top: px-to-rem(32px);

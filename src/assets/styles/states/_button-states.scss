@@ -8,6 +8,12 @@
   transition: opacity 0.2s ease;
 }
 
+// Focus state for accessibility
+.btn:focus {
+  outline: 2px solid $primary-blue;
+  outline-offset: 2px;
+}
+
 // Hover effect for enabled buttons (for future use)
 .btn:not(.is-disabled):hover {
   transform: translateY(-1px);
@@ -17,12 +23,6 @@
 // Active/pressed state
 .btn:not(.is-disabled):active {
   transform: translateY(0) scale(0.98);
-}
-
-// Focus state for accessibility
-.btn:focus {
-  outline: 2px solid $primary-blue;
-  outline-offset: 2px;
 }
 
 // Loading state (for future use when buttons become functional)
@@ -44,6 +44,7 @@
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }

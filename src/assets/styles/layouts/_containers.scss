@@ -7,3 +7,11 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
+// Responsiveness
+@media (max-width: 768px) {
+  .info-card-container {
+    width: 100vw;
+    flex: 0 0 100vw;
+  }
+}

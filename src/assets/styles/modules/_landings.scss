@@ -105,3 +105,12 @@
     animation-delay: 1.5s;
   }
 }
+
+// Responsiveness
+@media (max-width: 768px) {
+  #sol,
+  #viento,
+  #lluvia {
+    display: none;
+  }
+}

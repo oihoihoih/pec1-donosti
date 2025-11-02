@@ -1,25 +1,120 @@
 @use "../abstracts" as *;
 
 nav {
-  height: 50vh;
   position: fixed;
-  top: calc(50vh - 50vh / 2);
-  left: 1.5rem;
-  padding: 1rem;
-  border-radius: 50px;
-  background-color: rgba($light-gray, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   z-index: 9999;
+
+  // Desktop: navbar lateral (como antes)
+  @media (min-width: 769px) {
+    height: 50vh;
+    top: calc(50vh - 50vh / 2);
+    left: 1.5rem;
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: rgba($light-gray, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  // Mobile: navbar top con hamburguesa
+  @media (max-width: 768px) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
 }
 
-.navigation {
-  height: 100%;
-  margin-top: 2rem;
-  display: flex;
+// Logo
+.nav-logo {
+  @media (max-width: 768px) {
+    margin: 0;
+    font-size: 1.5rem;
+    color: $light-gray;
+  }
+}
+
+// Botón hamburguesa
+.hamburger-btn {
+  display: none;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: $light-gray;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+// Animación del hamburger cuando está abierto
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+// Navigation menu
+.navigation {
+  // Desktop: vertical como antes
+  @media (min-width: 769px) {
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  // Mobile: menú desplegable
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba($light-gray, 0.95);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+  }
 }

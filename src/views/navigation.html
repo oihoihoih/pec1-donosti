@@ -1,7 +1,15 @@
 <nav aria-label="Navegación por clima">
-  <!-- Aquí irá el menú, que será lateral en pantallas grandes y medias y hamburguesa en pequeñas -->
+
   <!-- TODO: Añadir interacción para subir arriba de la página al pulsar en el logo -->
-  <h1>D/SS</h1>
+  <h1 class="nav-logo">D/SS</h1>
+
+  <!-- Botón hamburguesa (solo visible en móvil) -->
+  <button class="hamburger-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
   <ul class="navigation">
     <li>
       <a href="#sol" class="icon" aria-label="Ir a sección sol">
@@ -16,19 +24,13 @@
 
     <li>
       <a href="#lluvia" class="icon" aria-label="Ir a sección lluvia">
-        <img
-          src="../node_modules/iconoir/icons/regular/heavy-rain.svg"
-          alt=""
-        />
+        <img src="../node_modules/iconoir/icons/regular/heavy-rain.svg" alt="" />
       </a>
     </li>
 
     <li>
       <a href="#nieve" class="icon" aria-label="Ir a sección nieve">
-        <img
-          src="../node_modules/iconoir/icons/regular/snow-flake.svg"
-          alt=""
-        />
+        <img src="../node_modules/iconoir/icons/regular/snow-flake.svg" alt="" />
       </a>
     </li>
   </ul>

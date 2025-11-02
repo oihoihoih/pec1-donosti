@@ -33,18 +33,8 @@ gsap.utils.toArray(".bouncy").forEach((item) => {
 // events: "onEnter onLeave onEnterBack onLeaveBack",
 // options: play, pause, resume, reset, restart,
 
-// Animation of sections intro
-// gsap.utils.toArray(".gsap-section-intro").forEach((section) => {
-//   ScrollTrigger.create({
-//     trigger: section,
-//     start: "top top",
-//     pin: false,
-//     pinSpacing: false,
-//     markers: true,
-//   });
-// });
-
 // Sun scaling animation
+
 ScrollTrigger.create({
   trigger: ".sun",
   start: "top 30%",
@@ -88,21 +78,29 @@ ScrollTrigger.create({
 });
 
 // Main-card entrance animation (from bottom to top)
-gsap.utils.toArray(".main-card").forEach((card) => {
-  gsap.from(card, {
-    y: 600,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: card,
-      start: "top 90%",
-      end: "top 70%",
-      toggleActions: "play none none reverse",
-      markers: false,
-    },
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+if (!isMobile) {
+  gsap.utils.toArray(".main-card").forEach((card) => {
+    gsap.from(card, {
+      y: 600,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        end: "top 70%",
+        toggleActions: "play none none reverse",
+        markers: false,
+      },
+    });
   });
-});
+} else {
+  gsap.set(".main-card", {
+    y: 0,
+    opacity: 1,
+  });
+}
 
 // Horizontal scroll animation for .places
 const placesElements = document.querySelectorAll(".places");
@@ -110,22 +108,33 @@ const placesElements = document.querySelectorAll(".places");
 function getScrollAmount(placesElement) {
   const containers = placesElement.querySelectorAll(".info-card-container");
 
-  // Calculate scroll
+  // Check if mobile
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    // No horizontal scroll in mobile due to vertical layout
+    return 0;
+  }
+
+  // Desktop: original calculation
   const lastContainerStart = containers[containers.length - 1].offsetLeft;
   return -lastContainerStart;
 }
 
 placesElements.forEach((places, index) => {
+  const scrollAmount = getScrollAmount(places);
+  const endValue = Math.abs(scrollAmount);
+
   const tween = gsap.to(places, {
-    x: () => getScrollAmount(places),
+    x: scrollAmount,
     duration: 6,
     ease: "none",
   });
 
   ScrollTrigger.create({
-    trigger: places.closest(".places-wrapper"), // To select various .places-wrapper
+    trigger: places.closest(".places-wrapper"),
     start: "top top",
-    end: () => `+=${getScrollAmount(places) * -1}`,
+    end: () => `+=${endValue}`,
     pin: true,
     pinSpacing: true,
     animation: tween,
@@ -134,7 +143,7 @@ placesElements.forEach((places, index) => {
   });
 });
 
-// Nieve animation
+// NIEVE ANIMATION
 function createSnowAnimation() {
   const nieveSection = document.querySelector("#nieve");
   const originalSnowflake = nieveSection.querySelector(".snowflake");
@@ -143,7 +152,7 @@ function createSnowAnimation() {
 
   const numberOfSnowflakes = 20;
   const snowflakes = [];
-  
+
   // Obtener el ancho real del viewport de forma más robusta
   const getViewportWidth = () => {
     return Math.max(
@@ -238,4 +247,34 @@ ScrollTrigger.create({
 gsap.set([".nieve-title", ".nieve-text"], {
   scale: 0.5, // Empiezan pequeños
   opacity: 0,
+});
+
+// Hamburger menu functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const navigation = document.querySelector(".navigation");
+
+  if (hamburgerBtn && navigation) {
+    hamburgerBtn.addEventListener("click", function () {
+      // Toggle active class on button (for animation)
+      hamburgerBtn.classList.toggle("active");
+
+      // Toggle active class on navigation (to show/hide menu)
+      navigation.classList.toggle("active");
+
+      // Update aria-expanded attribute for accessibility
+      const isExpanded = navigation.classList.contains("active");
+      hamburgerBtn.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Close menu when clicking on a navigation link (optional)
+    const navLinks = document.querySelectorAll(".navigation a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        hamburgerBtn.classList.remove("active");
+        navigation.classList.remove("active");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 });

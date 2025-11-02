@@ -29,3 +29,15 @@
   position: absolute;
   bottom: 0;
 }
+
+// Responsive adjustments for mobile
+@media (max-width: 768px) {
+  .main-card {
+    flex: 0 0 100vw;
+    width: 100vw;
+
+    &__inner {
+      padding: 10vh 2rem;
+    }
+  }
+}

@@ -17,10 +17,13 @@ h3 {
   font-family: $body-font;
   font-weight: 800;
   font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 h4 {
   font-family: $display-comment;
+  font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.5;

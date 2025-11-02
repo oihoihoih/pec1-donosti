@@ -23,7 +23,7 @@
  * It's a best practice to use a different partial for each page
  */
 
-@use "layouts/home" as layouts;
+@use "layouts/index" as layouts;
 
 /**
 * Import modules
@@ -36,6 +36,12 @@
 */
 
 @use "theme/index" as theme;
+
+/**
+* Import utilities
+*/
+
+@use "utilities/index" as utilities;
 
 /**
  * Do NOT include anything else in this file!

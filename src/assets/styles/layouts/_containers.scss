@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.info-card-container {
+  width: 50vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}

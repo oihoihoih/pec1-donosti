@@ -1,20 +1,5 @@
 @use "../abstracts" as *;
 
-// Main landing ID INTRO
-.main-landing {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  & h2 {
-    font-family: $display-serif-m;
-    font-size: clamp(3rem, 12vw, 8.5rem);
-    text-align: center;
-  }
-}
-
 .changing-txt {
   font-size: clamp(2rem, 5vw, 3rem);
   display: block;

@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+// Background utilities
+.u-bg-primary-blue {
+  background-color: $primary-blue;
+}
+.u-bg-primary-yellow {
+  background-color: $primary-yellow;
+}
+.u-bg-dark-gray {
+  background-color: $dark-gray;
+}
+.u-bg-light-gray {
+  background-color: $light-gray;
+}
+
+// Text color utilities
+.u-text-primary-blue {
+  color: $primary-blue;
+}
+.u-text-light-gray {
+  color: $light-gray;
+}
+.u-text-dark-gray {
+  color: $dark-gray;
+}

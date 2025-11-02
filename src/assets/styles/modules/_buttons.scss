@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid $dark-gray;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: $body-font;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.btn--info {
+  text-transform: uppercase;
+}

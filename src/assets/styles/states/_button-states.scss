@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+// Default disabled state for info buttons (since they don't lead anywhere yet)
+.btn.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+// Hover effect for enabled buttons (for future use)
+.btn:not(.is-disabled):hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+// Active/pressed state
+.btn:not(.is-disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+// Focus state for accessibility
+.btn:focus {
+  outline: 2px solid $primary-blue;
+  outline-offset: 2px;
+}
+
+// Loading state (for future use when buttons become functional)
+.btn.is-loading {
+  opacity: 0.7;
+  cursor: wait;
+  position: relative;
+
+  &::after {
+    content: "...";
+    position: absolute;
+    right: 0.5rem;
+    animation: pulse 1s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

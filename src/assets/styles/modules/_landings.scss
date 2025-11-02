@@ -14,8 +14,8 @@
 
   & h4.bouncy {
     position: absolute;
-    bottom: 8rem;
-    right: 8rem;
+    bottom: spacing(8);
+    right: spacing(8);
     transform-origin: bottom right;
     transform: translateX(0%) rotate(-45deg) scale(1);
   }
@@ -23,10 +23,10 @@
   & h4.bouncy::after {
     content: "";
     position: absolute;
-    bottom: -2rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
+    bottom: spacing(-2);
+    right: spacing(1);
+    width: spacing(2);
+    height: spacing(2);
     border-bottom: 3px solid currentColor;
     border-right: 3px solid currentColor;
     border-radius: 0 0 100% 0;

@@ -1,9 +1,9 @@
 @use "../abstracts" as *;
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: px-to-rem(8px) px-to-rem(16px);
   border: 1px solid $dark-gray;
-  border-radius: 0.5rem;
+  border-radius: px-to-rem(8px);
   cursor: pointer;
   font-family: $body-font;
   font-size: 0.875rem;

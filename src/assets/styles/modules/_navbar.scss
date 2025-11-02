@@ -4,9 +4,9 @@ nav {
   height: 50vh;
   position: fixed;
   top: calc(50vh - 50vh / 2);
-  left: 1.5rem;
-  padding: 1rem;
-  border-radius: 50px;
+  left: px-to-rem(24px);
+  padding: px-to-rem(16px);
+  border-radius: px-to-rem(50px);
   background-color: rgba($light-gray, 0.5);
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 0px;
+    border-radius: px-to-rem(0px);
     background-color: rgba($light-gray, 1);
     flex-direction: row;
   }
@@ -27,7 +27,7 @@ nav {
 
 .navigation {
   height: 100%;
-  margin-top: 2rem;
+  margin-top: px-to-rem(32px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@ nav {
     justify-content: flex-end;
 
     & .icon {
-      padding: 0 2rem;
+      padding: 0 px-to-rem(32px);
     }
   }
 }

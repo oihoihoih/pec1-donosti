@@ -10,8 +10,8 @@ body {
   flex-direction: column;
   width: 100vw;
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: px-to-rem(16px);
+  line-height: px-to-rem(24px);
 }
 
 section {

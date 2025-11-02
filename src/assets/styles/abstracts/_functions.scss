@@ -1,0 +1,28 @@
+@use "sass:math";
+@use "variables" as *;
+
+// Function to convert px to rem
+@function px-to-rem($px, $base-font-size: 16px) {
+  @return math.div($px, $base-font-size) * 1rem;
+}
+
+// Function to calculate responsive font sizes
+@function responsive-font-size(
+  $min-size,
+  $max-size,
+  $min-width: 320px,
+  $max-width: 1200px
+) {
+  @return clamp(
+    #{$min-size},
+    #{math.div($max-size - $min-size, $max-width - $min-width) * 100}vw +
+      #{$min-size},
+    #{$max-size}
+  );
+}
+
+// Function to create consistent spacing scale
+@function spacing($multiplier: 1) {
+  $base-spacing: 1rem;
+  @return $base-spacing * $multiplier;
+}

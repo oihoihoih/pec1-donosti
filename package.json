@@ -11,10 +11,7 @@
     "build": "npm-run-all clean parcel:build",
     "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
     "stylelint": "stylelint 'src/**/*.scss'",
-    "stylelint:fix": "stylelint 'src/**/*.scss' --fix",
-    "prettier": "prettier --check 'src/**/*.{html,scss,css,js}'",
-    "prettier:fix": "prettier --write 'src/**/*.{html,scss,css,js}'",
-    "format": "npm run prettier:fix && npm run stylelint:fix"
+    "prettier": "prettier --check 'src/**/*.{html,scss,css,js}'"
   },
   "targets": {
     "web": {

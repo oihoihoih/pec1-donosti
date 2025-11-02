@@ -13,35 +13,35 @@
     text-align: center;
   }
 }
-
-.weather-section {
-  display: flex;
-  flex-direction: row;
-
-  .main-card {
-    flex: 0 0 50%;
-  }
-
-  .places-wrapper {
-    flex: 1;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-
-    .main-card {
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    .places-wrapper {
-      width: 100%;
-
-      .places {
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-      }
-    }
-  }
-}
+//
+// .weather-section {
+//   display: flex;
+//   flex-direction: row;
+//
+//   .main-card {
+//     flex: 0 0 50%;
+//   }
+//
+//   .places-wrapper {
+//     flex: 1;
+//   }
+//
+//   @media (max-width: 768px) {
+//     flex-direction: column;
+//
+//     .main-card {
+//       width: 100%;
+//       min-height: 100vh;
+//     }
+//
+//     .places-wrapper {
+//       width: 100%;
+//
+//       .places {
+//         flex-direction: column;
+//         width: 100%;
+//         gap: 0;
+//       }
+//     }
+//   }
+// }

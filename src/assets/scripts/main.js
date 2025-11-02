@@ -248,33 +248,3 @@ gsap.set([".nieve-title", ".nieve-text"], {
   scale: 0.5, // Empiezan pequeños
   opacity: 0,
 });
-
-// Hamburger menu functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerBtn = document.querySelector(".hamburger-btn");
-  const navigation = document.querySelector(".navigation");
-
-  if (hamburgerBtn && navigation) {
-    hamburgerBtn.addEventListener("click", function () {
-      // Toggle active class on button (for animation)
-      hamburgerBtn.classList.toggle("active");
-
-      // Toggle active class on navigation (to show/hide menu)
-      navigation.classList.toggle("active");
-
-      // Update aria-expanded attribute for accessibility
-      const isExpanded = navigation.classList.contains("active");
-      hamburgerBtn.setAttribute("aria-expanded", isExpanded);
-    });
-
-    // Close menu when clicking on a navigation link (optional)
-    const navLinks = document.querySelectorAll(".navigation a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        hamburgerBtn.classList.remove("active");
-        navigation.classList.remove("active");
-        hamburgerBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-});
